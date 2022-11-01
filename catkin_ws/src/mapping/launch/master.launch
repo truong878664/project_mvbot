@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+    <node name="MVIBOT216map" pkg="map_server" type="map_server" args="$(find mapping)/map/map_2/map22.yaml map:=MVIBOT216/map"/>
+    <!-- <remap from="map" to="map2"/> -->
+    <node name="MVIBOT212map" pkg="map_server" type="map_server" args="$(find mapping)/map/map_1/library.yaml map:=MVIBOT212/map"/>
+    <!-- <remap from="map" to="map2"/> -->
+    <!-- MAP -->
+    <node name="MVIBOT203map" pkg="map_server" type="map_server" args="$(find mapping)/map/map_3/home.yaml map:=MVIBOT203/map"/>
+    <!-- <remap from="map" to="map3"/> -->
+    <!-- MAP -->
+    
+    <!-- <node name="mvibot_talker" pkg="mapping" type="mvibot_talker"/>
+
+    <node name="mvibot_listener" pkg="mapping" type="mvibot_listener"/> -->
+
+    <!-- TF2 -->
+    <node name="tf2_web_republisher" pkg="tf2_web_republisher" type="tf2_web_republisher" respawn="false" output="screen"/>
+
+</launch>
